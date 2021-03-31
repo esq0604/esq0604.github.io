@@ -12,4 +12,27 @@
   color:blue; backgroun-color:transparent;text-decoration:none;}
   </style>
   <title>HTML5앵커 실습</title></head>
-  
+   <body>
+    <h3 id="chapter1">제1장</h3> //문서내이동
+    <p>제1장 입니다. 제1장은 다음을 정의합니다.</p>
+    <p>다음</p>
+    <a href="http://www.google.com"target="_blank">구글이동(새윈도우)</a><br/> //새창 구글로이동//
+    <a href="anchor2.html">사이트 내 문서이동</a><br/> //anchor2.html이란 곳으로 이동 url전체를 안써도됨//
+    <a href="#chapter3">제3장문서내이동(북마크이동)</a><br/> //#은 id를 말함. 문서내 id로 이동//
+    <h3 id="chapter2">제2장</h3>
+    <p>제2장 입니다. 제2장은 무엇을 정의합니다.</p>
+    <p>HTML과 같은 하이퍼미디어에서, 노드는 HTML문서, 멀티미디어 정보를 표현하는 기본단위이고, 링크는 노드간을 연결하며, 앵커는 링크의 출발점 또는 도착점을 의미합니다.</p>
+    <p>제1장에서 공부한 내용이 궁금하다면 다음을<a href="#chapter1">클릭</a>하세요</p> //클릭하면 id chapter1으로감//
+    <h3 id="chapter3">제3장</h3>
+    <p>제3장 입니다. 제 3장은 무엇을 정의합니다.</p>
+    <ul> //언오더드리스트로 만듬 //
+      <li><a href="http://www.naver.com"target="_blank">네이버(새윈도우)</a><li>
+      <li><a href="anchor2.html">사이트내문서이동</a><li>
+      <li><a href="#chapter1">제1장이동(북마크이동)</a></li></ul>
+    <table> //테이블로만듬 테이블 안에도 만들수 있다.//
+      <tr><th>이동주소</th><th>사이트명</th><th>설명</th></tr>
+      <tr><td>구글</td></td><a href="http://www.naver.com">네이버</a></td><td>네이버</td></tr>
+<tr><td>사이트다른문서</td><td><a href="anchor2.html">anchor2.html로이동</a></td><td>anchor2></td></tr>
+<tr><td>제1장</td><td><a href="#chapter1">제 1장이동(북마크이동)</a></td><td>제1장</td></tr>
+</table>
+</body></html>
