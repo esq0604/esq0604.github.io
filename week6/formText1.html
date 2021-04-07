@@ -1,0 +1,18 @@
+<!doctype html> <!--formText1.html-->
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>폼 학습</title></head>
+  <body>
+    <section>
+      <form action="http://jsptogo.herokuapp.com/jspsrc/formText1.jsp" method="post">  <!--전송되는 장소  전달방식은 바디부분 데이터를 얹어서-->
+        <fieldset>
+          <legend>사용자 정보</legend>
+          <label for="namex">아이디</label> <!-- 2개의 라벨 사용 -->
+          <input id="namex" type="text" name="namex" size="20" maxlegth="20" placeholder="아이디 입력"/> <!-- 이름 네임엑스. 호출할때 네임엑스로 호출.인풋들이 서브밋을 입력하면 전송 텍스트는 화면에 출력 -->
+          <intput type="button" value="중복확인"/><br/>  <!-- 화면상으로 보여주기 위함. 버튼 -->
+          <label for="passx">패스워드</label>
+          <input id="passx" type="password" name="passx"/><br/>  <!-- 패스워드는 화면에 별로 입력됨.-->
+          <input type="submit" value="서버전송"/>
+          <input type="reset" value="취소"/>  <!-- 인풋안에 있는 값들을 취소하는 초기상태로 바꾸는것 -->
+        </fieldset></form> 
+    </section>
+  </body></html>
