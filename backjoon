@@ -45,3 +45,35 @@ int main()
 	for (int i = 0; i < n; i++)
 		cout << arr[i] << endl;
 }
+
+1003 피보나치 함수 - 각각 피보나치를 이루길래. 너무 길어짐
+#include<iostream>
+using namespace std;
+int arr[40];
+int fb1(int num) {
+	arr[0] = 1; arr[1] = 0;
+	for (int i = 0; i < num; i++)
+	{
+		arr[i + 2] = arr[i+1] + arr[i ];
+	}
+	return arr[num];
+}
+int fb2(int num) {
+	arr[0] = 0; arr[1] = 1;
+	for (int i = 0; i < num; i++)
+	{
+		arr[i + 2] = arr[i + 1] + arr[i];
+	}
+	return arr[num];
+}
+int main()
+{
+	int test, n;
+	cin >> test;
+	for (int i = 0; i < test; i++) {
+		cin >> n;
+		cout << fb1(n)<<' ' << fb2(n)<<endl;
+	}
+	
+
+}
