@@ -1,0 +1,22 @@
+2747번 피보나치 내가 틀린 이유는 입력 제한 안둬서 배열로 둠
+#include<iostream>
+using namespace std;
+
+int arr[45];
+int v(int num)
+{
+	
+	arr[0] = 0;    n=0,n1=1; n2=n1+n; n1=n2; n=n1; 로 했었음.
+	arr[1] = 1;
+	for (int i = 0; i < num; i++)
+	{
+		arr[i + 2] = arr[i + 1] + arr[i];
+	}
+	return arr[num];
+}
+int main()
+{
+	int n;
+	cin >> n;
+	cout<<v(n);
+} 
