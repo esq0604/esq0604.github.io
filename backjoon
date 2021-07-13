@@ -20,3 +20,28 @@ int main()
 	cin >> n;
 	cout<<v(n);
 } 
+
+2750 정렬 -비교할부분을 잘 정하고 하기. i와 i+1 비교, 마지막은 정렬되어 있으므로 n-1번 실행. 
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n, m,swap;
+	cin >> n;
+	int arr[1000];
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+	for (int i = 0; i < n-1; i++) {
+		for (int j = i+1; j < n; j++)
+		{
+			if (arr[i] > arr[j]) {
+				swap = arr[j];
+				arr[j] = arr[i];
+				arr[i] = swap;
+			}
+		}
+	}
+	for (int i = 0; i < n; i++)
+		cout << arr[i] << endl;
+}
