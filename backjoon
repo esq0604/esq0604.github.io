@@ -46,7 +46,7 @@ int main()
 		cout << arr[i] << endl;
 }
 
-1003 피보나치 함수 - 각각 피보나치를 이루길래. 너무 길어짐
+1003 피보나치 함수 - 각각 피보나치를 이루길래. 너무 길어짐 동적계획법으로 풀어보기
 #include<iostream>
 using namespace std;
 int arr[40];
