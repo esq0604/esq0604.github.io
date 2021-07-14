@@ -1,0 +1,80 @@
+#include<iostream>
+#include<conio.h>
+#include<windows.h>
+#include<time.h>
+
+#define UP 72
+#define DOWN 80
+#define LEFT 75
+#define RIGHT 77
+using namespace std;
+void gotoxy(int x, int y) //x,y좌표 표현
+{
+	COORD Pos;
+	Pos.X = x;
+	Pos.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
+}
+void cursor(int n)//커서 노출여부 조정
+{
+	HANDLE hConsole;
+	CONSOLE_CURSOR_INFO ConsoleCursor; //구조체 선언
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	ConsoleCursor.bVisible = n;//노출여부 1:보임 0:안보임
+	ConsoleCursor.dwSize = 1;//커서 사이즈
+	SetConsoleCursorInfo(hConsole, &ConsoleCursor);
+	//지정된 콘솔 스크린 버퍼에 대해 커서 노출여부 두깨 설정
+	//매개변수로 콘솔 스크린 버퍼에 대한 핸들과 console_cursor_info 구조체를 넘겨줌 .
+}
+/*int getCommand() {
+	if (_kbhit()) { //_kbhit() 입력하지 않더라도 프로그램은 진행됨.
+		return _getch(); //입력버퍼에 저장하지 않고 아스키값으로 반환-즉각적반응
+	}
+	return -1;//입력받지 않을경우 -1반환해 입력을 기다리지 않고 넘어감.
+}*/
+
+
+int main()
+{
+	system("mode con cols=100 lines=30");
+	int key = 0, x = 0, y = 0;//getch()에서 저장되는 값 key, x축,y축 
+	while (1) {
+		cursor(0);
+		system("cls");//clean scream
+		gotoxy(x, y);
+		cout << "●";
+		gotoxy(0, 29);
+		cout << "key값:" <<key<< "x좌표:" << x << "y좌표:" << y;
+
+		key = _getch();
+			//방향키 처음입력시 224.
+		if (key == 224) {
+			key = _getch();
+		}
+		if (key == UP) {
+			y--;
+			if (y < 0) {//위로 올라가다 0보다 작아지면
+				y = 0;//0으로 고정
+			}
+		}
+		else if (key == DOWN)
+		{
+			y++;
+			if (y > 25) {
+				y = 25;
+			}
+		}
+		else if (key == LEFT) {
+			x--;
+			if (x < 0) {
+				x = 0;
+			}
+		}
+		else if (key == RIGHT) {
+			x++;
+			if (x > 98) {
+				x = 98;
+			}
+		}
+	}
+}
