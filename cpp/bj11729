@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+void move(int n, int first, int mid, int end)
+{
+	
+	if (n == 1) {
+		cout << first << ' ' << end << "\n";
+	}
+	else {
+		move(n - 1, first, end, mid);
+		cout << first << ' ' << end << "\n";
+		move(n - 1, mid, first, end);
+		
+	}
+	
+}
+
+int main()
+{
+	int n,count;
+	cin >> n;
+	cout << (1<<n)-1<<"\n"; // ((1<<n) 2^n표현 
+	move(n,1,2,3);
+}
